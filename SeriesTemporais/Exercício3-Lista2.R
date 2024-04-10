@@ -15,3 +15,4 @@ reg = lm(ovo ~ y + I(y^2) + cos(2*pi*y/4) + cos(4*pi*y/4) + sin(2*pi *y/4))
 coef(reg)
 
 
+ 

@@ -19,4 +19,5 @@ y  = ts(c (0.50, 2.65, 0.97, 4.12, -0.59, 2.06, 2.17,
            1.00, 2.62, 2.74, 2.96, 2.62, 3.02, 2.76, 2.16, 1.55, 
            2.93, 3.10, 2.35), frequency = 1)
 #alta vai ser determinado pelo próprio R, e beta e gama não será usados pois é uma suavisação simples
-mod = holtwinters(y, beta= FALSE, gama= FALSE)
+mod = HoltWinters(y, beta= FALSE, gamma= FALSE)
+predict(mod, n.ahead= 10)
