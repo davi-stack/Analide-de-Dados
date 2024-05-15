@@ -5,10 +5,42 @@ Y <- ts(c(
   1230, 1107, 1133, 0879, 0937, 1888, 1661, 0820, 1313, 1586, 1911, 1447, 0916, 0780, 1042, 1090, 1750, 1724, 1726, 1384, 1881, 1114, 0747, 1378, 1068, 1032,
   1152, 0806, 1225, 0504, 1493, 1011, 1737, 1258, 2102, 2428, 1630, 1288, 1839, 1385, 1805, 1192, 2093, 1299, 2331, 2512, 1778, 1417, 1941, 1752, 0996, 1216,
   1086, 1051, 0955, 2029, 2836, 2457, 1260, 1862, 1863, 0978, 1549, 1089, 1043, 2380, 2144, 1708, 1143), start = 1851, frequency = 1)
-acf(Y)
+par(mfrow = c(1, 2))
+acf(Y, ci.type = "ma")
 #MA(1)
 pacf(Y)
 #RA(1)
+
+#Resposta b
+mod = arima(Y, order = c(0, 0, 1))
+
+aic_mod = AIC(mod)
+
+# No primeiro modelo q = 1, p =0, k = 1 (pois estimamos a media)
+#
+n = length(Y)
+lnL = logLik(mod)$
+
+teste = aic_mod + 2*()
+
+mod2 = arima(Y, order = c(1, 0, 0))
+aic2 = AIC(mod2)
+teste2 = aic2 + 2*6/(144)
+
+
+#Resposta c
+mod = arima(Y, order = c(2, 0, 3))
+testeBIC1 = AIC(mod2) + (log(n) - 2)*(1+1)
+
+#p = 2, q = 3, k =0
+testeBIC2 = AIC(modARMA) + (log(n) - 2)*(6)
+
+
+valor_p = testeBIC1 - testeBIC2
+
+#resposta d, supondo mod2 como o melhor
+
+
 
 
 

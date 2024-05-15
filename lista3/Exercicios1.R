@@ -9,9 +9,11 @@ y <- ts(c(
 length(y)
 A = matrix(y, nrow = 21, byrow = TRUE)
 m = log(apply(A, 1, median))
-dq = log(apply(A, 1, IQR))
+dp = log(apply(A, 1, IQR))
 reg = lm(dp ~ m)
 summary(reg)
 
-#Teste de 
+#Teste de media, estacionaria, d = 0
 acf(y)
+
+
